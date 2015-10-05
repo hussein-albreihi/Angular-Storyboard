@@ -9,10 +9,10 @@
 angular.module('angularProjectApp')
 	.directive('workitem', function () {
 
-    return {
-      scope: {
-        info: '='
-      },
+		return {
+			scope: {
+				info: '='
+			},
 			restrict: 'E',
 			templateUrl: '/scripts/directives/workitem.html'
 		};
