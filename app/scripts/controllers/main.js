@@ -14,26 +14,12 @@ angular.module('angularProjectApp').controller('MainCtrl', function (itemFactory
     console.log('Error', res);
   }
 
-  function getItems() {
-    itemFactory.getItems()
+  (function getAllItems() {
+    itemFactory.getAllItems()
       .then(function (res) {
-        items = res.title;
+        items = res.data;
+        console.log(items);
       }, onError);
-  }
+  })();
 
-  getItems();
-
-  this.createItem = function (title, desc) {
-    var item= {
-      title: title,
-      description: desc
-    };
-    itemFactory.createItem(item)
-      .then(getItems, onError);
-  };
-
-  this.deleteItem = function (id) {
-    itemFactory.deleteItem(id)
-      .then(getItems, onError);
-  };
 });
