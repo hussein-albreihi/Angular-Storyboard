@@ -7,11 +7,6 @@
  * # MainCtrl
  * Controller of the angularProjectApp
  */
-angular.module('angularProjectApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+angular.module('angularProjectApp').controller('MainCtrl', function (userFactory){
+
+});
