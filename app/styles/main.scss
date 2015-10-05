@@ -12,7 +12,7 @@ $color4: #a3586d; //rgba(163, 88, 109, 100)
 $color5: #ed9890; //rgba(237, 152, 144, 100)
 $color6: #66273b; //rgba(237, 152, 144, 100)
 
-box {
+.column{
   background: $color2;
   border: 2px solid $color6;
   border-radius: 2px;
@@ -38,13 +38,10 @@ workitem {
   background: $color4;
   border: 0.5px solid #66273b;
   border-radius: 1px;
+  cursor: pointer;
 
   p {
     padding-left: 10px;
-    background: $color4;
-    border: 0.5px solid #66273b;
-    border-radius: 1px;
-    cursor: pointer;
   }
 }
 
