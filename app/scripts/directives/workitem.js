@@ -9,8 +9,7 @@
 angular.module('angularProjectApp')
 	.directive('workitem', function () {
 		return {
-			templateUrl: '/scripts/directives/workitem.html',
 			restrict: 'E',
-
+			templateUrl: '/scripts/directives/workitem.html'
 		};
 	});

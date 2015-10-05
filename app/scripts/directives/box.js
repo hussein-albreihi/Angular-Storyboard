@@ -9,9 +9,8 @@
 angular.module('angularProjectApp')
 	.directive('box', function () {
 		return {
-			templateUrl: '/scripts/directives/box.html',
 			restrict: 'E',
-			transclude: true
-
+			transclude: true,
+			templateUrl: '/scripts/directives/box.html'
 		};
 	});

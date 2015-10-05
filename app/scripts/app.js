@@ -11,7 +11,8 @@
 angular
   .module('angularProjectApp', [
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ui.sortable'
   ])
   .config(function ($routeProvider) {
     $routeProvider
