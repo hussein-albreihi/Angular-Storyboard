@@ -7,12 +7,14 @@
  * # editText
  */
 angular.module('angularProjectApp')
-  .directive('editText', function () {
+  .directive('editText', function ($window) {
     return {
-      template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the editText directive');
-      }
+      restrict: 'A',
+      link: function (scope, element, attrs) {
+        element.text('edit', function () {
+          if (!$window.getSelection().toString()) {
+            this.setSelectionRange(0, this.value.length)
+          }
+        })}
     };
   });

@@ -51,6 +51,11 @@ $color6: #66273b; //rgba(237, 152, 144, 100)
   }
 }
 
+a{
+  &:hover{
+    cursor: pointer;
+  }
+}
 
 body {
   padding: 0;
