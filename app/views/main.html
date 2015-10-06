@@ -1,24 +1,25 @@
 <div class="board">
   <div class="column">
     <h4>Do</h4>
-    <workitem ng-repeat="item in items" info=item>
+    <workitem ng-repeat="item in items | sortBy:'doing'" info=item>
     </workitem>
     <h6>Add card..</h6>
   </div>
   <div class="column">
     <h4>Fragmentary</h4>
-    <workitem>
-    </workitem>
+    <workitem ng-repeat="item in items | sortBy:'not completed'" info=item></workitem>
     <h6>Add card..</h6>
   </div>
 
   <div class="column">
     <h4>Implementation</h4>
+    <workitem ng-repeat="item in items | sortBy:''" info=item></workitem>
     <h6>Add card..</h6>
   </div>
 
   <div class="column">
     <h4>Complete</h4>
+    <workitem ng-repeat="item in items | sortBy:'completed'" info=item></workitem>
     <h6>Add card..</h6>
   </div>
 </div>
