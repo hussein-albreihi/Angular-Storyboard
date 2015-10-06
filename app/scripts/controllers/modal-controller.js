@@ -4,6 +4,7 @@ angular.module('angularProjectApp')
 	.controller('ModalCtrl', function ($scope, itemFactory) {
 		$scope.modalShown = false;
 		$scope.username = '';
+
 		$scope.toggleModal = function () {
 			$scope.modalShown = !$scope.modalShown;
 		};
