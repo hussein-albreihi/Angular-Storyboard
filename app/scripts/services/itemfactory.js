@@ -30,6 +30,9 @@ angular.module('angularProjectApp')
 			},
 			deleteWorkitem: function (id) {
 				return $http.delete(url4 + '/' + id);
+			},
+			updateItem: function (id, status) {
+				return $http.put(url4 + '/' + id + '/status', status);
 			}
 		};
 	});

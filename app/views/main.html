@@ -1,7 +1,7 @@
 <div class="board">
 
   <div class="column">
-    <h4>Do</h4>
+    <h4>Doing</h4>
     <div ng-controller="ModalCtrl">
     <sb-workitem ng-repeat="item in items | sortBy:'doing'" info=item></sb-workitem>
     <h6 ng-click='toggleModal()'>Add card..</h6>
@@ -13,7 +13,7 @@
 
   <div class="column">
     <h4>Fragmentary</h4>
-      <sb-workitem ng-repeat="item in items | sortBy:'not completed'" info=item></sb-workitem>
+    <ui-sortable><sb-workitem ng-repeat="item in items | sortBy:'not completed'" info=item></sb-workitem></ui-sortable>
     <div ng-controller="ModalCtrl">
     <h6 ng-click='toggleModal()'>Add card..</h6>
     <modal-dialog show='modalShown' width='750px' height='60%'>

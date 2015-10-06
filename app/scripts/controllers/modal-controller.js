@@ -16,12 +16,19 @@ angular.module('angularProjectApp')
 		function onError(res) {
 			console.log('Error', res);
 		}
-		(function getAllItems() {
+		(function getAllUsers() {
 			itemFactory.getAllUsers()
 				.then(function (res) {
 					$scope.users = res.data;
 				}, onError);
 		})();
+		$scope.updateItem = function (status, id) {
+			var fix = {
+				status: status
+			};
+			itemFactory.updateItem(id, fix);
+		};
+
 
 		$scope.deleteWorkitem = function (id) {
 			itemFactory.deleteWorkitem(id);
