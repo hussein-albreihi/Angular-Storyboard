@@ -3,13 +3,23 @@
     <h4>Do</h4>
     <workitem ng-repeat="item in items" info=item>
     </workitem>
-    <h6>Add card..</h6>
+    <div ng-controller="ModalCtrl">
+    <h6 ng-click='toggleModal()'>Add card..</h6>
+    <modal-dialog show='modalShown' width='750px' height='60%'>
+      <sb-workitem-form></sb-workitem-form>
+    </modal-dialog>
+    </div>
   </div>
   <div class="column">
     <h4>Fragmentary</h4>
     <workitem>
     </workitem>
-    <h6>Add card..</h6>
+    <div ng-controller="ModalCtrl">
+    <h6 ng-click='toggleModal()'>Add card..</h6>
+    <modal-dialog show='modalShown' width='750px' height='60%'>
+      <sb-workitem-form></sb-workitem-form>
+    </modal-dialog>
+    </div>
   </div>
 
   <div class="column">
@@ -28,9 +38,7 @@
     <div ng-controller="ModalCtrl">
     <h6 ng-click='toggleModal()'>Add card..</h6>
     <modal-dialog show='modalShown' width='750px' height='60%'>
-    <form>
-      <input type="text"></form>
-    </form>
+      <sb-workitem-form></sb-workitem-form>
     </modal-dialog>
     </div>
   </div>
