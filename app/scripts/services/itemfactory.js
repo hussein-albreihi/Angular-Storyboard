@@ -27,6 +27,5 @@ angular.module('angularProjectApp')
 			getAllUsers: function () {
 				return $http.get(url + '/users');
 			}
-
 		};
 	});
