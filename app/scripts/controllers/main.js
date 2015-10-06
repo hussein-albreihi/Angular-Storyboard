@@ -18,7 +18,6 @@ angular.module('angularProjectApp').controller('MainCtrl', function ($scope, ite
     itemFactory.getAllItems()
       .then(function (res) {
         $scope.items = res.data;
-        console.log($scope.items);
       }, onError);
   })();
 
