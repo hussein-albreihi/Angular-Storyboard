@@ -15,7 +15,7 @@ angular.module('angularProjectApp')
 		function onError(res) {
 			console.log('Error', res);
 		}
-		(function getAllItems() {
+		(function getAllUsers() {
 			itemFactory.getAllUsers()
 				.then(function (res) {
 					$scope.users = res.data;
