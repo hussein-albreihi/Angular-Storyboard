@@ -33,6 +33,14 @@ $color6: #66273b; //rgba(237, 152, 144, 100)
     padding-left: 10px;
   }
 }
+.divider {
+  height: 1px;
+  width:100%;
+  display:block; /* for use on default inline elements like span */
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
 
 workitem {
   background: $color4;
@@ -42,6 +50,7 @@ workitem {
 
   p {
     padding-left: 10px;
+    color: #89847F;
   }
 }
 

@@ -3,7 +3,7 @@
   <div class="column">
     <h4>Do</h4>
     <div ng-controller="ModalCtrl">
-    <sb-workitem ng-repeat="item in items | sortBy:'doing" info=item></sb-workitem>
+    <sb-workitem ng-repeat="item in items | sortBy:'doing'" info=item></sb-workitem>
     <h6 ng-click='toggleModal()'>Add card..</h6>
     <modal-dialog show='modalShown' width='750px' height='60%'>
       <sb-workitem-form></sb-workitem-form>
@@ -46,3 +46,4 @@
   </div>
 
 </div>
+
