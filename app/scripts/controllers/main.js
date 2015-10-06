@@ -8,7 +8,8 @@
  * Controller of the angularProjectApp
  */
 angular.module('angularProjectApp').controller('MainCtrl', function ($scope, itemFactory) {
-  $scope.items;
+  $scope.items = [];
+  $scope.users = [];
   $scope.modalShown = false;
   $scope.username = '';
 
@@ -23,6 +24,12 @@ angular.module('angularProjectApp').controller('MainCtrl', function ($scope, ite
       }, onError);
   })();
 
+  (function getAllUsers() {
+    itemFactory.getAllUsers()
+      .then(function (res) {
+        $scope.users = res.data;
+      }, onError);
+  })();
 
   $scope.toggleModal = function () {
     $scope.modalShown = !$scope.modalShown;
