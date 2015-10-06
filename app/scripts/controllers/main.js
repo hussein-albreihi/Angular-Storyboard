@@ -20,5 +20,4 @@ angular.module('angularProjectApp').controller('MainCtrl', function ($scope, ite
         $scope.items = res.data;
       }, onError);
   })();
-
 });
