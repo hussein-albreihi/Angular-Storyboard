@@ -12,6 +12,7 @@ angular.module('angularProjectApp')
 		var url = 'http://localhost:9999/v1/teams/nullheart';
 		var url2 = 'http://localhost:9999/v1/items/nullheart/items';
 		var url3 = 'http://localhost:9999/v1/users';
+		var url4 = 'http://localhost:9999/v1/items';
 
 		return {
 			getAllItems: function () {
@@ -26,6 +27,9 @@ angular.module('angularProjectApp')
 			},
 			getAllUsers: function () {
 				return $http.get(url + '/users');
+			},
+			updateItem: function (id, status) {
+				return $http.put(url4 + '/' + id + '/status', status);
 			}
 		};
 	});
