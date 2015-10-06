@@ -7,9 +7,8 @@
  * # workitem
  */
 angular.module('angularProjectApp')
-	.directive('workitem', function () {
-
-		return {
+	.directive('sbWorkitem', function () {
+    return {
 			scope: {
 				info: '='
 			},
