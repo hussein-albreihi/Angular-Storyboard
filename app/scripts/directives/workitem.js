@@ -13,7 +13,10 @@ angular.module('angularProjectApp')
       scope: {
         info: '='
       },
-			restrict: 'E',
-			templateUrl: '/scripts/directives/workitem.html'
+			restrict: 'AE',
+			templateUrl: '/scripts/directives/workitem.html',
+      controller: ['$scope', function(){
+
+      }];
 		};
 	});
