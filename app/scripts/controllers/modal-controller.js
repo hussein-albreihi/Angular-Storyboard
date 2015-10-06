@@ -8,9 +8,9 @@ angular.module('angularProjectApp')
 			$scope.modalShown = !$scope.modalShown;
 		};
 
-		$scope.addUser = function (username) {
+		$scope.addUser = function (username, id) {
 			console.log('click');
-			itemFactory.addItemToUser(username, 3);
+			itemFactory.addItemToUser(username, id);
 		};
 
 	});
