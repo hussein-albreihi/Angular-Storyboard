@@ -1,6 +1,10 @@
 <div ng-controller="ModalCtrl">
-<p ng-click='toggleModal()'>{{info.title}}</p>
+
+<p ng-click='toggleModal()'>{{info.title}} <b>{{info.status}}<b></p>
+  <li role="presentation" class="divider"></li>
 <modal-dialog show='modalShown' width='750px' height='60%'>
   <p>{{info.description}}</p>
+  	<input name="user" type="text" class="form-control" ng-model="username" required/>
+		<input type="submit" class="btn btn-default" ng-click="addUser(username)" ng-disabled="workitemForm.$dirty && workitemForm.$invalid"/>
 </modal-dialog>
 </div>
