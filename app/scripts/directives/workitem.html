@@ -22,7 +22,9 @@
 			<option value="idea">Idea</option>
 			<option value="completed">Completed</option>
 		</select>
+		<div ng-controller="sbUpdateFormCtrl">
 		<input type="submit"value="Update Status" class="btn btn-default" ng-click="updateItem(status, info.id)"/>
+		</div>
   </modal-dialog>
 </div>
 
