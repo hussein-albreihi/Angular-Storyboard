@@ -8,11 +8,15 @@
  * Factory in the angularProjectApp.
  */
 angular.module('angularProjectApp')
-  .factory('itemFactory', function ($http) {
-    var url = 'http://192.168.68.158:9999/v1/teams/nullheart/items';
-    return {
-      getAllItems: function () {
-        return $http.get(url);
-      }
-    };
-  });
+	.factory('itemFactory', function ($http) {
+		var url = 'http://192.168.68.158:9999/v1/teams/nullheart/items';
+		var url2 = 'http://192.168.68.158:9999/v1/items';
+		return {
+			getAllItems: function () {
+				return $http.get(url);
+			},
+			addItem: function (item) {
+				return $http.post(url2, item);
+			}
+		};
+	});
