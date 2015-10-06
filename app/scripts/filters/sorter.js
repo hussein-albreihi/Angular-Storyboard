@@ -11,13 +11,8 @@
 angular.module('angularProjectApp')
   .filter('sortBy', function () {
     return function (items, status) {
-      var sorted = [];
-      for (var i = 0; i < items.length; i++){
-        var item = items[i];
-        if(item.status === status){
-          sorted.push(item);
-        }
-      }
-      return sorted;
+      return items.filter(function(item){
+        return item.status === status;
+      });
     };
   });
