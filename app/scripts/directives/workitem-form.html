@@ -1,21 +1,21 @@
-<form name="workitemForm" ng-submit="sendForm()">
+<form name="workitemForm" ng-controller="sbFormCtrl" ng-submit="sendForm()">
 	<div class="form-group">
 	 	<label for="title">Title</label>
-		<input name="title" type="text" class="form-control" required/>
+		<input name="title" type="text" class="form-control" ng-model="item.title" required/>
 		<p class="alert alert-danger" ng-show="workitemForm.title.$error.required && workitemForm.title.$dirty" class="alert alert-warning">
 		Required</p>
 		</div>
 
 		<div class="form-group">
 	 	<label for="description">Description</label>
-		<input name="description" type="text" class="form-control" required/>
+		<input name="description" type="text" class="form-control" ng-model="item.description" required/>
 		<p class="alert alert-danger" ng-show="workitemForm.description.$error.required && workitemForm.description.$dirty" class="alert alert-warning">
 		Required</p>
 		</div>
 
 		<div class="form-group">
 	 	<label for="status">Status</label>
-		<select name="status">
+		<select name="status" ng-model="item.status">
   			<option value="do">Do</option>
 			<option value="fragmentary">Fragmentary</option>
 			<option value="implementation">Implementation</option>
