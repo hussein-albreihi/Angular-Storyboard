@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularProjectApp')
-	.controller('ModalCtrl', function ($scope, itemFactory) {
+	.controller('ModalCtrl', function ($scope, $route, itemFactory) {
 		$scope.modalShown = false;
 		$scope.username = '';
 
@@ -22,5 +22,9 @@ angular.module('angularProjectApp')
 					$scope.users = res.data;
 				}, onError);
 		})();
+
+		$scope.deleteWorkitem = function (id) {
+			itemFactory.deleteWorkitem(id);
+		};
 
 	});

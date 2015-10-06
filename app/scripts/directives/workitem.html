@@ -1,6 +1,6 @@
 <div ng-controller="ModalCtrl">
 
-<p ng-click='toggleModal()'>{{info.title}} <b>{{info.status}}<b></p>
+<p ng-click='toggleModal()'>{{info.title}}</p> <button class="badge" ng-click="deleteWorkitem(info.id)">X</button>
   <li role="presentation" class="divider"></li>
 <modal-dialog show='modalShown' width='750px' height='60%'>
   <p>{{info.description}}</p>
