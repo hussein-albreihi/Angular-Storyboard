@@ -5,11 +5,11 @@
 <modal-dialog show='modalShown' width='750px' height='60%'>
   <p>{{info.description}}</p>
   <p>{{info.id}}</p>
-  <select name="users">
-  			<option value="usernameTest" ng-repeat="user in users">{{user.username}}</option>
+  <p>{{info.user}}</p>
+  <select name="users" ng-model="username">
+  			<option ng-repeat="user in users">{{user.username}}</option>
 			
 		</select>
-  	<input name="user" type="text" class="form-control" ng-model="username" required/>
 		<input type="submit" class="btn btn-default" ng-click="addUser(username, info.id)" ng-disabled="workitemForm.$dirty && workitemForm.$invalid"/>
 </modal-dialog>
 </div>
