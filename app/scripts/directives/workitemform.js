@@ -12,10 +12,12 @@ angular.module('angularProjectApp')
 			restrict: 'E',
 			templateUrl: '/scripts/directives/workitem-form.html'
 		};
-	}).controller('sbFormCtrl', function ($scope, itemFactory) {
+	}).controller('sbFormCtrl', function ($scope, $route, itemFactory) {
 		$scope.item = {};
 		$scope.sendForm = function () {
 			itemFactory.addItem($scope.item);
 			console.log('click');
+			itemFactory.getAllItems();
+			$route.reload();
 		};
 	});
