@@ -26,5 +26,4 @@ angular.module('angularProjectApp')
 		$scope.deleteWorkitem = function (id) {
 			itemFactory.deleteWorkitem(id);
 		};
-
 	});
