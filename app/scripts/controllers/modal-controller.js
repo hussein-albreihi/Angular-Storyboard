@@ -22,13 +22,6 @@ angular.module('angularProjectApp')
 					$scope.users = res.data;
 				}, onError);
 		})();
-		$scope.updateItem = function (status, id) {
-			var fix = {
-				status: status
-			};
-			itemFactory.updateItem(id, fix);
-		};
-
 
 		$scope.deleteWorkitem = function (id) {
 			itemFactory.deleteWorkitem(id);
