@@ -7,8 +7,8 @@
  * # MainCtrl
  * Controller of the angularProjectApp
  */
-angular.module('angularProjectApp').controller('MainCtrl', function (itemFactory){
-  var items;
+angular.module('angularProjectApp').controller('MainCtrl', function ($scope, itemFactory) {
+  $scope.items;
 
   function onError(res) {
     console.log('Error', res);
@@ -17,8 +17,8 @@ angular.module('angularProjectApp').controller('MainCtrl', function (itemFactory
   (function getAllItems() {
     itemFactory.getAllItems()
       .then(function (res) {
-        items = res.data;
-        console.log(items);
+        $scope.items = res.data;
+        console.log($scope.items);
       }, onError);
   })();
 
