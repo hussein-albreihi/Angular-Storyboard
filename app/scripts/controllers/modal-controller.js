@@ -10,8 +10,17 @@ angular.module('angularProjectApp')
 		};
 
 		$scope.addUser = function (username, id) {
-			console.log('click');
 			itemFactory.addItemToUser(username, id);
 		};
+
+		function onError(res) {
+			console.log('Error', res);
+		}
+		(function getAllItems() {
+			itemFactory.getAllUsers()
+				.then(function (res) {
+					$scope.users = res.data;
+				}, onError);
+		})();
 
 	});
