@@ -1,30 +1,36 @@
 <div ng-controller="ModalCtrl">
+  <div class="item">
+    <span class="text" ng-click='toggleModal()'> {{info.title}} </span>
+    <span class="close" ng-click="deleteWorkitem(info.id)">x</span>
+  </div>
 
-<p ng-click='toggleModal()'>{{info.title}}</p> <button class="badge" ng-click="deleteWorkitem(info.id)">X</button>
-  <li role="presentation" class="divider"></li>
   <modal-dialog show='modalShown' width='750px' height='60%'>
     <h1>{{info.title}}</h1>
 
-    <p></p>
+    <p><i>Description</i> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></p>
 
-    <p><i>{{info.description}}</i></p>
+    <p>{{info.description}}</p>
 
-    <div><p>Assigned to: <b>{{info.user.username}}</b></p></div>
+    <div>
+      <p>Assigned to: <b>{{info.user.username}}</b></p>
+    </div>
+
     <select name="users" ng-model="username">
       <option ng-repeat="user in users">{{user.username}}</option>
     </select>
     <input type="submit" class="btn btn-default" ng-click="addUser(username, info.id)"
            ng-disabled="workitemForm.$dirty && workitemForm.$invalid"/>
 
-  <select name="status" ng-model="status">
-  			<option value="doing">Doing</option>
-			<option value="not completed">Not completed</option>
-			<option value="idea">Idea</option>
-			<option value="completed">Completed</option>
-		</select>
-		<div ng-controller="sbUpdateFormCtrl">
-		<input type="submit"value="Update Status" class="btn btn-default" ng-click="updateItem(status, info.id)"/>
-		</div>
-  </modal-dialog>
-</div>
+    <select name="status" ng-model="status">
+      <option value="doing">Doing</option>
+      <option value="not completed">Not completed</option>
+      <option value="idea">Idea</option>
+      <option value="completed">Completed</option>
+    </select>
 
+    <div ng-controller="sbUpdateFormCtrl">
+      <input type="submit" value="Update Status" class="btn btn-default" ng-click="updateItem(status, info.id)"/>
+    </div>
+  </modal-dialog>
+
+</div>
