@@ -11,15 +11,13 @@
       <select name="users" ng-model="username">
         <option ng-repeat="user in users">{{user.username}}</option>
       </select>
-    <input type="submit" class="btn btn-default" ng-click="addUser(username, info.id)"
-           ng-disabled="workitemForm.$dirty && workitemForm.$invalid"/>
+      <input type="submit" class="btn btn-default" ng-click="addUser(username, info.id)"
+             ng-disabled="workitemForm.$dirty && workitemForm.$invalid"/>
     </div>
     <br/>
     <span><i>Description</i> <a edit-text></a></span>
+
     <p>{{info.description}}</p>
-
-
-
 
     <select name="status" ng-model="status">
       <option value="doing">Doing</option>
