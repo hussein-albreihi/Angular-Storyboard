@@ -8,15 +8,11 @@
  */
 angular.module('angularProjectApp')
 	.directive('workitem', function () {
-
     return {
-      scope: {
-        info: '='
-      },
-			restrict: 'AE',
-			templateUrl: '/scripts/directives/workitem.html',
-      controller: ['$scope', function(){
-
-      }];
+			scope: {
+				info: '='
+			},
+			restrict: 'E',
+			templateUrl: '/scripts/directives/workitem.html'
 		};
 	});

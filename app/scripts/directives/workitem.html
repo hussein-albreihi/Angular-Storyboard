@@ -1,1 +1,6 @@
-<p>{{item.title}}</p>
+<div ng-controller="ModalCtrl">
+<p ng-click='toggleModal()'>{{info.title}}</p>
+<modal-dialog show='modalShown' width='750px' height='60%'>
+  <p>{{info.description}}</p>
+</modal-dialog>
+</div>
