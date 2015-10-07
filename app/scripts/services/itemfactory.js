@@ -10,7 +10,6 @@
 angular.module('angularProjectApp')
 	.factory('itemFactory', function ($http) {
 		var url = 'http://localhost:9999/v1/teams/nullheart';
-		var url2 = 'http://localhost:9999/v1/items/nullheart/items';
 		var url3 = 'http://localhost:9999/v1/users';
 		var url4 = 'http://localhost:9999/v1/items';
 
@@ -20,7 +19,7 @@ angular.module('angularProjectApp')
 			},
 			addItem: function (item) {
 				console.log(item);
-				return $http.post(url2, item);
+				return $http.post(url4 + '/nullheart/items', item);
 			},
 			addItemToUser: function (username, id) {
 				return $http.post(url3 + '/' + username + '/items' + '/' + id);
