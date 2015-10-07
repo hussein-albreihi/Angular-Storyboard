@@ -23,8 +23,6 @@ angular.module('angularProjectApp').controller('MainCtrl', function ($scope, ite
 
   getAllItems();
 
-
-
   $scope.afterDelete = function (id) {
     /* itemFactory.deleteWorkitem(id).then(function () {
        getAllItems();
