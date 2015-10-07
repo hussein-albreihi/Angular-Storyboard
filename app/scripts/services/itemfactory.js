@@ -9,29 +9,29 @@
  */
 angular.module('angularProjectApp')
 	.factory('itemFactory', function ($http) {
-		var url = 'http://localhost:9999/v1/teams/nullheart';
-		var url3 = 'http://localhost:9999/v1/users';
-		var url4 = 'http://localhost:9999/v1/items';
+		var urlTeam = 'http://localhost:9999/v1/teams/nullheart';
+		var urlUsers = 'http://localhost:9999/v1/users';
+		var urlItems = 'http://localhost:9999/v1/items';
 
 		return {
 			getAllItems: function () {
-				return $http.get(url + '/items');
+				return $http.get(urlTeam + '/items');
 			},
 			addItem: function (item) {
 				console.log(item);
-				return $http.post(url4 + '/nullheart/items', item);
+				return $http.post(urlItems + '/nullheart/items', item);
 			},
 			addItemToUser: function (username, id) {
-				return $http.post(url3 + '/' + username + '/items' + '/' + id);
+				return $http.post(urlUsers + '/' + username + '/items' + '/' + id);
 			},
 			getAllUsers: function () {
-				return $http.get(url + '/users');
+				return $http.get(urlTeam + '/users');
 			},
 			deleteWorkitem: function (id) {
-				return $http.delete(url4 + '/' + id);
+				return $http.delete(urlItems + '/' + id);
 			},
 			updateItem: function (id, status) {
-				return $http.put(url4 + '/' + id + '/status', status);
+				return $http.put(urlItems + '/' + id + '/status', status);
 			}
 		};
 	});
