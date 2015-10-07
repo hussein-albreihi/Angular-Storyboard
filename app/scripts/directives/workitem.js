@@ -17,11 +17,13 @@ angular.module('angularProjectApp')
 			templateUrl: '/scripts/directives/workitem.html',
 			controller: function ($scope, $route, itemFactory) {
 				$scope.modalShown = false;
+				$scope.users = [];
+				$scope.username = '';
 				$scope.updateItem = function (status, id) {
-					var fix = {
+					var jsonStatus = {
 						status: status
 					};
-					itemFactory.updateItem(id, fix);
+					itemFactory.updateItem(id, jsonStatus);
 					$route.reload();
 				};
 				$scope.deleteWorkitem = function () {
@@ -49,10 +51,22 @@ angular.module('angularProjectApp')
 						  }
 					}*/
 				};
+				$scope.addUser = function (username, id) {
+					itemFactory.addItemToUser(username, id);
+				};
+
+				function onError(res) {
+					console.log('Error', res);
+				}
 				$scope.toggleModal = function () {
-					console.log('CLicked!');
 					$scope.modalShown = !$scope.modalShown;
 				};
+				(function getAllUsers() {
+					itemFactory.getAllUsers()
+						.then(function (res) {
+							$scope.users = res.data;
+						}, onError);
+				})();
 			}
 		};
 	});

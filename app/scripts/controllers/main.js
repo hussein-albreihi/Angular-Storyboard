@@ -9,9 +9,6 @@
  */
 angular.module('angularProjectApp').controller('MainCtrl', function ($scope, itemFactory) {
   $scope.items = [];
-  $scope.users = [];
-  $scope.modalShown = false;
-  $scope.username = '';
 
   function onError(res) {
     console.log('Error', res);
@@ -26,18 +23,7 @@ angular.module('angularProjectApp').controller('MainCtrl', function ($scope, ite
 
   getAllItems();
 
-  (function getAllUsers() {
-    itemFactory.getAllUsers()
-      .then(function (res) {
-        $scope.users = res.data;
-      }, onError);
-  })();
 
-
-
-  $scope.addUser = function (username, id) {
-    itemFactory.addItemToUser(username, id);
-  };
 
   $scope.afterDelete = function (id) {
     /* itemFactory.deleteWorkitem(id).then(function () {
