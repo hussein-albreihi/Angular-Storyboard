@@ -16,7 +16,7 @@ angular.module('angularProjectApp')
 			templateUrl: '/scripts/directives/workitem.html'
 		};
 	}).controller('sbUpdateFormCtrl', function ($scope, $route, itemFactory) {
-		  $scope.updateItem = function (status, id) {
+		$scope.updateItem = function (status, id) {
 			var fix = {
 				status: status
 			};
