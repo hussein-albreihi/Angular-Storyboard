@@ -1,7 +1,6 @@
-<div ng-controller="MainCtrl">
-	<h6 ng-click='toggleModal()'>Add card..</h6>
+<h6 ng-click='toggleModal()'>Add card..</h6>
 	<modal-dialog show='modalShown' width='750px' height='60%'>
-	<form name="workitemForm" ng-controller="sbFormCtrl" ng-submit="sendForm()">
+	<form name="workitemForm" ng-submit="sendForm()">
 		<div class="form-group">
 			<label for="title">Title</label>
 			<input name="title" type="text" class="form-control" ng-model="item.title" required/>
