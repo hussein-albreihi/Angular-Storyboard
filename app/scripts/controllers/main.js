@@ -23,23 +23,15 @@ angular.module('angularProjectApp').controller('MainCtrl', function ($scope, ite
 
   getAllItems();
 
+
+
+  $scope.addUser = function (username, id) {
+    itemFactory.addItemToUser(username, id);
+  };
+
   $scope.afterDelete = function (id) {
-    /* itemFactory.deleteWorkitem(id).then(function () {
-       getAllItems();
-       $scope.$apply();
-     });*/
-    console.log('after delete');
     $scope.items = $scope.items.filter(function (item) {
       return item.id !== id;
     });
-    console.log($scope.items);
-
-    /*
-    for (var x = 0; x < $scope.items.length; x++) {
-      if ($scope.items[x].id === id) {
-        $scope.items.splice(x, 1);
-
-      }
-    }*/
   };
 });

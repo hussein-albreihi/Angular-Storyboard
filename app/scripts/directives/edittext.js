@@ -10,11 +10,12 @@ angular.module('angularProjectApp')
   .directive('editText', function ($window) {
     return {
       restrict: 'A',
-      link: function (scope, element, attrs) {
+    link: function (scope, element, attrs) {
         element.text('edit', function () {
           if (!$window.getSelection().toString()) {
-            this.setSelectionRange(0, this.value.length)
+            this.setSelectionRange(0, this.value.length);
           }
-        })}
+        });
+      }
     };
   });
