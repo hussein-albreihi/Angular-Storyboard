@@ -1,8 +1,7 @@
 <div class="board">
-
   <div class="column">
     <h4>Doing</h4>
-    <sb-workitem ng-repeat="item in items | sortBy:'doing'" info=item></sb-workitem>
+    <sb-workitem ng-repeat="item in items | sortBy:'doing'" info="item" after-delete="afterDelete()"></sb-workitem>
     <sb-workitem-form></sb-workitem-form>
   </div>
 

@@ -1,7 +1,7 @@
-<div ng-controller="MainCtrl">
+<div>
   <div class="item">
     <span class="text" ng-click='toggleModal()'>{{info.title}}</span>
-    <span class="close" ng-click="deleteWorkitem(info.id)">×</span>
+    <span class="close" ng-click="deleteWorkitem()">×</span>
   </div>
 
   <modal-dialog show='modalShown' width='750px' height='60%'>
@@ -26,7 +26,7 @@
       <option value="completed">Completed</option>
     </select>
 
-    <div ng-controller="sbUpdateFormCtrl">
+    <div>
       <input type="submit" value="Update Status" class="btn btn-default" ng-click="updateItem(status, info.id)"/>
     </div>
   </modal-dialog>
